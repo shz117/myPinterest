@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pi--My Mni Pinterest!</title>
+</head>
+<body>
+<div id="welcome">Welcome to my mini Pinterest! Enjoy!</div>
+<div id="form-div">
+    <form id="login_form" class="form-signin" method="post">
+					{% csrf_token %}
+					<h2>{% if errmsg %} {{ errmsg }} {% else %} Please Sign In{% endif %}</h2>
+
+
+					<input id="login_username" name="username" type="text"  placeholder="User Name" >
+					<br/>
+					<input id="login_password" name="pwd" type="password" maxlength="12" placeholder="Password" >
+					<div class="row-fluid">
+						<div class="span4">
+							<label class="checkbox">
+								<input type="checkbox" value="remember-me">
+								Keep signed in</label>
+						</div>
+					</div>
+					<input id="sign_in" value="Sign In" class="btn  btn-primary" type="submit">
+					<input id="sign_up" value="Sign Up" class="btn  btn-primary" type="button">
+				</form>
+</div>
+
+</body>
+<script>
+    var signUpBtn = document.getElementById('sign_up');
+    signUpBtn.onclick=function(){
+        window.location.href='/signup';
+    };
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ user }}'s home page</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <h2>Welcome {{ user }}!</h2>
+    <div>Your Boards:</div>
+    {% for board in ownedBoard %}
+        <div id={{ board.name }}>{{ board.name }}</div>
+    {% endfor %}
+    <br>
+    <div>Your Follow Streams</div>
+    {% for stream in Streams %}
+        <div id={{ stream.name }}>{{ stream.name }}</div>
+    {% endfor %}
+    <br>
+    <input type="button" value="Create new Board" onclick="createBoardForm">
+    <input type="button" value="Create new Stream">
+</body>
+<script>
+    function createBoardForm(){
+        var f = document.createElement("form");
+        f.setAttribute('method',"post");
+        f.setAttribute('action',"/createboard")
+        f.setAttribute('id',"board-create-form");
+
+        var i = document.createElement("input"); //input element, text
+        i.setAttribute('type',"text");
+        i.setAttribute('name',"boardname");
+        i.setAttribute('placeholder',"Please input board name")
+
+        var s = document.createElement("input"); //input element, Submit button
+        s.setAttribute('type',"submit");
+        s.setAttribute('value',"Create Board");
+
+        var c = document.createElement("input");
+        c.setAttribute('type',"button");
+        c.setAttribute('value',"Cancel");
+        c.addEventListener('click', function(){
+            var form = document.getElementById('board-create-form');
+            form.parentnode.reomoveChild(form);
+        });
+
+        f.appendChild(i);
+        f.appendChild(s);
+        f.appendChild(c);
+
+        //and some more input elements here
+        //and dont forget to add a submit button
+
+        document.getElementsByTagName('body')[0].appendChild(f);
+    }
+
+{#    function cancelCreateBoardForm(){#}
+{#        var form = document.getElementById('board-create-form');#}
+{#        form.parentnode.reomoveChild(form);#}
+{#    }#}
+</script>
+</html>
