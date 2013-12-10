@@ -116,3 +116,6 @@ TEMPLATE_DIRS = (
 )
 
 AUTH_USER_MODEL='User.User'
+
+# MEDIA_ROOT = '/'
+MEDIA_URL = '/imgs/'

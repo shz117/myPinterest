@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Board: {{ board.name }}</title>
+</head>
+<body>
+<h2>{{ board.name }}</h2>
+{% for pic in pictures %}
+    <img src="/imgs{{ pic.image.url }}">
+{% endfor %}
+<input id="new-pin" value="New Pin" type="button">
+</body>
+<script>
+    var newPinBtn = document.getElementById('new-pin');
+    newPinBtn.onclick=function(){
+        window.location.href='/newpin';
+    };
+</script>
+</html>

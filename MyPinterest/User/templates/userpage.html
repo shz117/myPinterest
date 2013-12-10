@@ -2,26 +2,26 @@
 <html>
 <head>
     <title>{{ user }}'s home page</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+{#    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>#}
 </head>
 <body>
     <h2>Welcome {{ user }}!</h2>
     <div>Your Boards:</div>
-    {% for board in ownedBoard %}
-        <div id={{ board.name }}>{{ board.name }}</div>
+    {% for board in ownBoards %}
+        <a href="/boardpage/?b={{ board.id }}">{{ board.name }}</a>
     {% endfor %}
     <br>
     <div>Your Follow Streams</div>
-    {% for stream in Streams %}
-        <div id={{ stream.name }}>{{ stream.name }}</div>
-    {% endfor %}
+{#    {% for stream in Streams %}#}
+{#        <div id={{ stream.name }}>{{ stream.name }}</div>#}
+{#    {% endfor %}#}
     <br>
-    <input type="button" value="Create new Board" onclick="createBoardForm">
+    <input type="button" value="Create new Board" onclick="createBoardForm()">
     <input type="button" value="Create new Stream">
 </body>
 <script>
     function createBoardForm(){
-        var f = document.createElement("form");
+        var f = document.createElement("form");//create form
         f.setAttribute('method',"post");
         f.setAttribute('action',"/createboard")
         f.setAttribute('id',"board-create-form");
@@ -35,22 +35,28 @@
         s.setAttribute('type',"submit");
         s.setAttribute('value',"Create Board");
 
-        var c = document.createElement("input");
-        c.setAttribute('type',"button");
-        c.setAttribute('value',"Cancel");
-        c.addEventListener('click', function(){
-            var form = document.getElementById('board-create-form');
-            form.parentnode.reomoveChild(form);
-        });
+        var a = document.createElement("select"); //select element attached to form, but not in form
+        a.setAttribute('name',"access");
+        a.setAttribute('form',"board-create-form");
+        var op1 = document.createElement("option");
+        op1.setAttribute('value',"2");
+        op1.innerHTML="public";
+        var op2 = document.createElement("option");
+        op2.setAttribute('value',"1");
+        op2.innerHTML="friends only";
+        var op3 = document.createElement("option");
+        op3.setAttribute('value',"0");
+        op3.innerHTML="private";
+        a.appendChild(op1);
+        a.appendChild(op2);
+        a.appendChild(op3);
 
         f.appendChild(i);
         f.appendChild(s);
-        f.appendChild(c);
-
-        //and some more input elements here
-        //and dont forget to add a submit button
 
         document.getElementsByTagName('body')[0].appendChild(f);
+        document.getElementsByTagName('body')[0].appendChild(a);
+
     }
 
 {#    function cancelCreateBoardForm(){#}

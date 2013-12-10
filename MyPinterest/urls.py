@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 admin.autodiscover()
 
@@ -16,4 +18,6 @@ urlpatterns = patterns('',
     url(r'^signup$', 'MyPinterest.User.views.signup', name='signup'),
     url(r'^userpage$', 'MyPinterest.User.views.userpage'),
     url(r'^createboard','MyPinterest.Pinboard.views.createBoard'),
+    url(r'^boardpage','MyPinterest.Pinboard.views.boardpage'),
+    url(r'^imgs(?P<path>.*)$','django.views.static.serve'),
 )

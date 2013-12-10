@@ -62,13 +62,13 @@ def userpage(request):
     user=request.user
     #get user's own boards
     boards=Board.objects.filter(owner=user)
+    print boards
     #get user's follow streams
     streams = FollowStream.objects.filter(owner=user)
-    context={}
-    context['user']=user
+    context=dict()
     context['ownBoards']=boards
     context['Streams']= streams
-    return render_to_response('userpage.html', context_instance=RequestContext(request))
+    return render_to_response('userpage.html',context, context_instance=RequestContext(request))
 
 
 def createUser(data):

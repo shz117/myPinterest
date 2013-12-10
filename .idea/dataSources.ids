@@ -2387,6 +2387,7 @@
     <table name="Relations_followstream" schema="" catalog="pi2" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
+      <column name="owner_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="followstream_id_refs_id_f5bb97fa" table="Relations_followstream_boards" schema="" catalog="pi2" columns="followstream_id"/>
     </table>
@@ -2395,8 +2396,8 @@
       <column name="followstream_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="board_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="followstream_id_refs_id_f5bb97fa" columns="followstream_id" ref-table="Relations_followstream" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="board_id_refs_id_a0ac313d" columns="board_id" ref-table="Pinboard_board" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="followstream_id_refs_id_f5bb97fa" columns="followstream_id" ref-table="Relations_followstream" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="followstream_id" unique="true" columns="board_id"/>
       <index name="Relations_followstream_boards_69d43cf2" unique="false" columns="followstream_id"/>
       <index name="Relations_followstream_boards_7d7b3da9" unique="false" columns="board_id"/>
@@ -2471,8 +2472,8 @@
       <exported-key name="follower_id_refs_id_e16cd427" table="friendship_follow" schema="" catalog="pi2" columns="follower_id"/>
       <exported-key name="from_user_id_refs_id_bf41fea3" table="friendship_friend" schema="" catalog="pi2" columns="from_user_id"/>
       <exported-key name="to_user_id_refs_id_bf41fea3" table="friendship_friend" schema="" catalog="pi2" columns="to_user_id"/>
-      <exported-key name="to_user_id_refs_id_fb58c409" table="friendship_friendshiprequest" schema="" catalog="pi2" columns="to_user_id"/>
       <exported-key name="from_user_id_refs_id_fb58c409" table="friendship_friendshiprequest" schema="" catalog="pi2" columns="from_user_id"/>
+      <exported-key name="to_user_id_refs_id_fb58c409" table="friendship_friendshiprequest" schema="" catalog="pi2" columns="to_user_id"/>
       <index name="username" unique="true" columns="username"/>
     </table>
     <table name="auth_user_groups" schema="" catalog="pi2" type="TABLE">
@@ -2480,8 +2481,8 @@
       <column name="user_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="group_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="user_id_refs_id_40c41112" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="group_id_refs_id_274b862c" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="user_id_refs_id_40c41112" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="user_id" unique="true" columns="group_id"/>
       <index name="auth_user_groups_5f412f9a" unique="false" columns="group_id"/>
       <index name="auth_user_groups_6340c63c" unique="false" columns="user_id"/>
@@ -2491,8 +2492,8 @@
       <column name="user_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="permission_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="user_id_refs_id_4dc23c39" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="permission_id_refs_id_35d9ac25" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="user_id_refs_id_4dc23c39" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="user_id" unique="true" columns="permission_id"/>
       <index name="auth_user_user_permissions_6340c63c" unique="false" columns="user_id"/>
       <index name="auth_user_user_permissions_83d7f98b" unique="false" columns="permission_id"/>
@@ -2519,8 +2520,8 @@
       <column name="flag" sqlType="VARCHAR" length="30" precision="0" nullable="false" jdbcType="12"/>
       <column name="flag_date" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="user_id_refs_id_73e17509" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="comment_id_refs_id_669ff450" columns="comment_id" ref-table="django_comments" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="user_id_refs_id_73e17509" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="user_id" unique="true" columns="comment_id,flag"/>
       <index name="django_comment_flags_3925f323" unique="false" columns="comment_id"/>
       <index name="django_comment_flags_6340c63c" unique="false" columns="user_id"/>
@@ -2541,9 +2542,9 @@
       <column name="is_public" sqlType="BIT" length="0" precision="0" nullable="false" jdbcType="-7"/>
       <column name="is_removed" sqlType="BIT" length="0" precision="0" nullable="false" jdbcType="-7"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="user_id_refs_id_c4f1d065" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="content_type_id_refs_id_5ce75e49" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="site_id_refs_id_c6498c81" columns="site_id" ref-table="django_site" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="user_id_refs_id_c4f1d065" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="comment_id_refs_id_669ff450" table="django_comment_flags" schema="" catalog="pi2" columns="comment_id"/>
       <exported-key name="comment_ptr_id_refs_id_b062bfaf" table="threadedcomments_comment" schema="" catalog="pi2" columns="comment_ptr_id"/>
       <index name="django_comments_37ef4eb4" unique="false" columns="content_type_id"/>
@@ -2608,11 +2609,18 @@
       <column name="rejected" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
       <column name="viewed" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="to_user_id_refs_id_fb58c409" columns="to_user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="from_user_id_refs_id_fb58c409" columns="from_user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="to_user_id_refs_id_fb58c409" columns="to_user_id" ref-table="auth_user" ref-schema="" ref-catalog="pi2" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="from_user_id" unique="true" columns="to_user_id"/>
       <index name="friendship_friendshiprequest_0e7efed3" unique="false" columns="from_user_id"/>
       <index name="friendship_friendshiprequest_bc172800" unique="false" columns="to_user_id"/>
+    </table>
+    <table name="south_migrationhistory" schema="" catalog="pi2" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="app_name" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="migration" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="applied" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="threadedcomments_comment" schema="" catalog="pi2" type="TABLE">
       <column name="comment_ptr_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
