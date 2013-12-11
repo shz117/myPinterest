@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>repin page</title>
+    <link href="/media/css/boardpage.css" rel="stylesheet"></head>
+</head>
+<body>
+<h2>Repin picture</h2>
+<div class="polaroid">
+       <img class="pictuure polaroid-img" src="/imgs/{{ pin.picture.image.url }}">
+    <p class="polaroid-p">by {{ pin.picture.first_piner }}</p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>Pin to my board:</div>
+<form method="post" action="">
+    <select name="to_board">
+        {% for board in boards %}
+           <option value="{{ board.id }}">{{ board.name }}</option>
+        {% endfor %}
+    </select>
+    <input type="text" name="description" placeholder="Tell us something about it">
+    <input type="hidden" name="picture" value="{{ pin.picture.id }}">
+    <input type="hidden" name="from_pin" value="{{ pin.id }}">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

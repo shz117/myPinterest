@@ -32,6 +32,8 @@ def verifyLogin(theUsername, thePassword, ip=None):
 
 def login(request):
     if request.method == 'GET':
+        if request.user.is_authenticated():
+            return userpage(request)
         getData = request.GET
         if ('msg' in getData and len(getData['msg'])) > 0:
             return render_to_response('login.html', {"err_msg" : getData['msg']}, context_instance=RequestContext(request))

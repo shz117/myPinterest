@@ -8,8 +8,8 @@ class Tag(models.Model):
 
 class Picture(models.Model):
     first_piner = models.ForeignKey(User,related_name='first_piner')
-    web_url = models.URLField()
-    image = models.ImageField(upload_to=settings.PICTURE_DIR,height_field=300,width_field=150)
-    active = models.BooleanField()
+    web_url = models.URLField(null=True, blank=True)
+    image = models.FileField(upload_to='pictures/')
+    active = models.BooleanField(default=True)
     tags = models.ManyToManyField(Tag)
     liked_by_users = models.ManyToManyField(User,'liker')

@@ -26,4 +26,10 @@ class Pin(models.Model):
     from_pin = models.ForeignKey('self', null=True, blank=True, default=None, related_name='children')
     description = models.CharField(max_length=500)
 
+class Comment(models.Model):
+    user = models.ForeignKey(User)
+    pin = models.ForeignKey(Pin)
+    payload = models.CharField(max_length=500)
+    comment_time = models.DateTimeField()
+
 

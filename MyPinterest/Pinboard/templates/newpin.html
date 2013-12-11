@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>create pin</title>
+</head>
+<body>
+<h2>add from local</h2>
+<form method="post" action="/newpin" enctype="multipart/form-data">
+    <input type="text" name="picname" placeholder="Picture Name">
+    <input type="file" name="pic">
+    <input type="hidden" name="board" value="{{ board.id }}">
+    <br>
+    <input type="text" name="description" placeholder="Put some words about this picture">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

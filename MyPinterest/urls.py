@@ -19,5 +19,10 @@ urlpatterns = patterns('',
     url(r'^userpage$', 'MyPinterest.User.views.userpage'),
     url(r'^createboard','MyPinterest.Pinboard.views.createBoard'),
     url(r'^boardpage','MyPinterest.Pinboard.views.boardpage'),
-    url(r'^imgs(?P<path>.*)$','django.views.static.serve'),
+    url(r'^newpin','MyPinterest.Pinboard.views.newpin'),
+    url(r'^pin','MyPinterest.Pinboard.views.pinpage'),
+    url(r'^repin',"MyPinterest.Pinboard.views.repin"),
+    #static serve
+    url(r'^imgs(?P<path>.*)$','django.views.static.serve',{'document_root': settings.MEDIA_ROOT }),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, }),
 )

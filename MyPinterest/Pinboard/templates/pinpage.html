@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>pin page</title>
+    <link href="/media/css/boardpage.css" rel="stylesheet"></head>
+</head>
+<body>
+<a href="/boardpage/?b={{ board.id }}">
+<h2>{{ board.name }}</h2>
+</a>
+<a href="/repin/?pin={{ pin.id }}">Repin it!</a>
+<div class="polaroid">
+       <img class="pictuure polaroid-img" src="/imgs/{{ picture.image.url }}">
+    <p class="polaroid-p">by {{ picture.first_piner }}</p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>
+{% for tag in tags %}
+    <span>{{ tag.name }}</span>,
+{% endfor %}
+</p>
+{% if isOwner %}
+    <form method="post" action="">
+        <input type="text" name="tag" placeholder="new tag">
+        <input type="hidden" name="picture"  value="{{ picture.id }}">
+        <input type="hidden" name="pin"  value="{{ pin.id }}">
+        <input type="submit" value="Submit">
+    </form>
+{% endif %}
+<h3>Description</h3>
+    <div>{{ pin.description }}</div>
+{#{% load threadedcomments_tags %}#}
+{% block content %}
+    <h1>Comments:</h1>
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <div class="message">
+                    <p class="title">{{ comment.user }} commented at {{ comment.comment_time }}</p>
+
+                    <p class="text">{{ comment.payload }}</p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+    <form method="post" action="">
+        <input type="text" name="payload" placeholder="Please comment here">
+        <input type="hidden" name="pid" value="{{ pin.id }}">
+        <input type="hidden" name="bid" value="{{ board.id }}">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-PICTURE_DIR = os.path.join(BASE_DIR, 'MyPinterest/Picture/media/pictures')
+PICTURE_DIR = os.path.join(BASE_DIR, 'MyPinterest/Picture/media/pictures/')
 
 #DB settings:
 
@@ -117,5 +117,5 @@ TEMPLATE_DIRS = (
 
 AUTH_USER_MODEL='User.User'
 
-# MEDIA_ROOT = '/'
-MEDIA_URL = '/imgs/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'MyPinterest/media')
+# MEDIA_URL = HOSTNAME+'/media/'

@@ -1,0 +1,25 @@
+.pictuure {
+    width : 300px;
+    height: 300px;
+}
+
+.polaroid {
+    width: 300px;
+    height: 300px;
+}
+ 
+.polaroid-img {
+  border: 10px solid #fff;
+  border-bottom: 5px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+ 
+.polaroid-p {
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 18px/1 'Kaushan Script', cursive;
+  color: #888;
+}
