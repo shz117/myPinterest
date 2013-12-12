@@ -2,7 +2,18 @@ myPinterest
 ===========
 
 pinterest like web app
-![myPinterest Screenshot](https://github.com/shz117/myPinterest/master/login.png)
+
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/login.png)
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/userpage.png)
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/userprofile.png)
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/search.png)
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/searchresults.png)
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/boardpage.png)
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/newpin.png)
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/pinpage_picture_tags_description_likes.png)
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/pinpage_comments.png)
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/pinpage_comments.png)
+
 Use:
 
 1. install python and django
