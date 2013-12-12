@@ -17,7 +17,13 @@
 <br>
 <br>
 <div class="polaroid">
+       {% if picture.web_url|length > 2  %}
+            <a href="{{ picture.web_url }}">
+       {% else %}
+           <a href="/imgs/{{ picture.image.url }}">
+       {% endif %}
        <img class="pictuure polaroid-img" src="/imgs/{{ picture.image.url }}">
+            </a>
     <p class="polaroid-p">by <a href="/user/?uid={{ board.owner.id }}">{{ board.owner }}</a></p>
 </div>
 <br>
@@ -82,6 +88,15 @@ width: 400px;">
 
         <span><input class="btn btn-info" type="submit" value="Submit" style="margin-left: 20px"></span>
     </form>
+<br>
+            <br><br>
+    <a href="/boardpage/?b={{ board.id }}">
+    <input class="btn btn-primary" type="button" value="Back to {{ board.name }}">
+</a>
+            <br><br>
+    <a href="/">
+    <input class="btn btn-primary" type="button" value="Go home">
+</a>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="/media/bootstrap/js/bootstrap.js"></script>
 </div>

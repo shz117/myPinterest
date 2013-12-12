@@ -73,7 +73,9 @@ def userpage(request):
             pl = list(pins)
             if pl:
                 pin = pl[0]
-            fimg = pin.picture
+                fimg = pin.picture
+            else:
+                fimg=  Picture.objects.get(id=12)
             item = dict()
             item['board'] = board
             item['img']=fimg
@@ -111,7 +113,7 @@ def signup(request):
             #redirect to user homepage, with session??
             request.session['user'] = request.POST['username']
             # return redirect('/userpage')
-            return HttpResponseRedirect('/userpage')
+            return HttpResponseRedirect('/')
         else:
             return render_to_response('signup.html', {"errmsg" : "Sign up failed, username you choosed might be taken"}, context_instance=RequestContext(request))
 
@@ -137,6 +139,7 @@ def userprofile(request):
                 board_img.append(item)
         friend_list = getFriends(visit_user)
         isFriend = request.user in friend_list
+        requetedFriend = FriendStatus.objects.filter(from_user=request.user,to_user=visit_user,status=0)
         streams = FollowStream.objects.filter(owner=visit_user)
         data = dict()
         data['user']=visit_user
@@ -145,6 +148,7 @@ def userprofile(request):
         data['friends']=friend_list
         data['isFriend']=isFriend
         data['streams']=streams
+        data['requested']=requetedFriend
         return render_to_response('userprofile.html',data, context_instance=RequestContext(request))
 
 def getFriends(user):

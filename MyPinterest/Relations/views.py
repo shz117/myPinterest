@@ -87,8 +87,12 @@ def friendrequesthandler(request):
     to_user = User.objects.get(id=to_uid)
     from_user = request.user
     _friend = FriendStatus.objects.filter(from_user=from_user,to_user=to_user)
-    if not len(_friend)!=0:
+    if len(_friend)==0:
         friend = FriendStatus.objects.create(from_user=from_user,to_user=to_user,status=0)
+        friend.save()
+    else:
+        friend = list(_friend)[0]
+        friend.status=0
         friend.save()
     return HttpResponseRedirect("/user/?uid="+str(to_user.id))
 
@@ -110,7 +114,7 @@ def acceptrequest(request):
     return HttpResponseRedirect("/friendrequests/?uid="+str(request.user.id))
 
 @csrf_exempt
-def rejecttrequest(request):
+def rejectrequest(request):
     from_user = User.objects.get(id=request.GET['from_user'])
     friend = FriendStatus.objects.get(from_user=from_user,to_user=request.user)
     friend.status=2

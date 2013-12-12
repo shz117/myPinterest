@@ -10,6 +10,7 @@
     <div class="container" style="margin-bottom: 200px; margin-top: 50px">
     <h2>Welcome, <a href="/user/?uid={{ user.id }}">{{ user }}!</a></h2>
     <a href="/signout"><input class="btn btn-warning pull-right" style="margin-right: 20px" type="button" value="sign me out"></a>
+    <a href="/user/?uid={{ user.id }}"><input class="btn btn-primary pull-right" style="margin-right: 20px" type="button" value="Settings"></a>
     {% if boards|length == 0 %}
     <h3>You don't have any boards, create one by button bellow.</h3>
     {% else %}
@@ -35,6 +36,9 @@
     </tbody>
     </table>
     {% endif %}
+    <a href="/createboard">
+    <input class="btn btn-success" type="button" value="Create new Board">
+    </a>
     <br>
     {% if Streams|length == 0 %}
     <h3>You don't have any follow streams, create one by button bellow.</h3>
@@ -51,6 +55,9 @@
     </table>
     {% endif %}
     <br>
+    <a href="/createstream">
+    <input class="btn btn-success" type="button" value="Create new Stream">
+    </a>
     {% if friends|length == 0 %}
     <h3>You don't have any friends, explore myPinterest from search button below.</h3>
     {% else %}
@@ -66,12 +73,6 @@
     </table>
     <br>
     {% endif %}
-    <a href="/createboard">
-    <input class="btn btn-success" type="button" value="Create new Board">
-    </a>
-    <a href="/createstream">
-    <input class="btn btn-success" type="button" value="Create new Stream">
-    </a>
     <a href="/search">
     <input class="btn btn-info" type="button" id="search" value="Search myPinterest">
     </a>

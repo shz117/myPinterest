@@ -5,24 +5,35 @@
     <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
 </head>
 <body>
-<h2>add from local</h2>
+    <div class="container" style="margin-bottom: 200px; margin-top: 50px">
+<h2>Add from local</h2>
 <form method="post" action="/newpin" enctype="multipart/form-data">
-    <input type="text" name="picname" placeholder="Picture Name">
+    <input class="form-control" style="width: 200px" type="text" name="picname" placeholder="Picture Name">
     <input type="file" name="pic">
     <input type="hidden" name="board" value="{{ board.id }}">
     <br>
-    <input type="text" name="description" placeholder="Put some words about this picture">
-    <input type="submit" value="Submit">
+    <textarea type="text" name="description" rows="3" placeholder="Put some words about this picture"></textarea>
+    <input class="btn btn-success" type="submit" value="Submit">
 </form>
 
-<h2>add from url</h2>
+<h2>Add from url</h2>
 <form method="post" action="/newpin">
-    <input type="text" name="pic_url" placeholder="Paste image url here">
-    <input type="hidden" name="board" value="{{ board.id }}">
+    <input class="form-control" style="width: 200px" type="text" name="pic_url" placeholder="Paste image url here">
+    <input class="form-control" style="width: 200px" type="text" name="web_url" placeholder="Paste related web url here">
+    <input  type="hidden" name="board" value="{{ board.id }}">
     <br>
-    <input type="text" name="description" placeholder="Put some words about this picture">
-    <input type="submit" value="Submit">
+    <textarea type="text" name="description" rows="3" placeholder="Put some words about this picture"></textarea>
+    <input class="btn btn-success" type="submit" value="Submit">
 </form>
+            <br><br>
+    <a href="/boardpage/?b={{ board.id }}">
+    <input class="btn btn-primary" type="button" value="Back to {{ board.name }}">
+</a>
+            <br><br>
+    <a href="/">
+    <input class="btn btn-primary" type="button" value="Go home">
+</a>
+</div>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="/media/bootstrap/js/bootstrap.js"></script>
 </body>

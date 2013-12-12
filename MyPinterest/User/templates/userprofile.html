@@ -9,8 +9,12 @@
 <h1>{{ user }}</h1>
 {% if not isSelf %}
     {% if not isFriend %}
-    <a href="/sendfriendrequest/?to_uid={{ user.id }}">
-    <input class="btn btn-success" type="button" value="Request Friend">
+        {% if requested %}
+            <div class="btn btn-info"><i class="glyphicon glyphicon-ok-circle"> </i>Requested</div>
+        {% else %}
+        <a href="/sendfriendrequest/?to_uid={{ user.id }}">
+        <input class="btn btn-success" type="button" value="Request Friend">
+        {% endif %}
     </a>
     {% else %}
         <div class="btn btn-info"><i class="glyphicon glyphicon-ok"> </i>Friend</div>
@@ -62,8 +66,12 @@
     {% endif %}
 
 {% if friends|length == 0 %}
+    {% if isSelf %}
     <h3>You don't have any friends, explore myPinterest from search button below.</h3>
     {% else %}
+     <h3>{{ user }} don't have any friends.</h3>
+    {% endif %}
+{% else %}
     <table class="table table-striped table-bordered" style="width: 300px">
     <thead>
     <h3>{{ user }}'s friends:</h3>

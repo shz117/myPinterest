@@ -27,12 +27,11 @@ def createBoard(request):
     else:
         result = {'result':True}
         try:
-            print request.user
-            print request.POST
             boardName = request.POST.get('boardname')
+            if len(Board.objects.filter(name=boardName))>0:
+                return userpage(request)
             board = Board.objects.create(owner=request.user,create_time=datetime.datetime.now(),name=boardName,access_level=request.POST.get('access'))
             print board
-
             board.save()
         except DatabaseError:
             result['result']=False
@@ -84,7 +83,7 @@ def newpin(request):
     else:
         if len(request.FILES)!=0:
             im = request.FILES['pic']
-            picture=Picture.objects.create(first_piner=request.user,active=True,web_url='',image=im)
+            picture=Picture.objects.create(first_piner=request.user,active=True,web_url='/',image=im)
             picture.save()
             bid = request.POST['board']
             board=Board.objects.get(id=bid)
@@ -93,11 +92,11 @@ def newpin(request):
         else:
             #get image from url
             url = request.POST['pic_url']
-            name = urlparse(url).path.split('/')[-1]
+            web_url = request.POST['web_url']
             img_temp = NamedTemporaryFile(delete=True)
             img_temp.write(urllib2.urlopen(url).read())
             img_temp.flush()
-            picture=Picture.objects.create(first_piner=request.user,active=True,web_url='',image=File(img_temp))
+            picture=Picture.objects.create(first_piner=request.user,active=True,web_url=web_url,image=File(img_temp))
             picture.save()
             bid = request.POST['board']
             board=Board.objects.get(id=bid)
@@ -218,6 +217,8 @@ def createStream(request):
             print request.user
             print request.POST
             streamName = request.POST.get('streamname')
+            if len(FollowStream.objects.filter(name=streamName))>0:
+                return userpage(request)
             stream = FollowStream.objects.create(owner=request.user,name=streamName)
             stream.save()
         except DatabaseError:

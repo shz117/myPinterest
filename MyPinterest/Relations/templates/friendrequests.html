@@ -13,9 +13,9 @@
 {% for req in requests %}
     <div><a href="/user/?uid={{ req.from_user.id }}">{{ req.from_user }}</a> would like to add you as a friend.</div>
     <a href="/acceptrequest/?from_user={{ req.from_user.id }}">
-    <input type="button" value="Accept"></a>
+    <input class="btn btn-success" type="button" value="Accept"></a>
     <a href="/rejectrequest/?from_user={{ req.from_user.id }}">
-    <input type="button" value="Reject"></a>
+    <input class="btn btn-warning" type="button" value="Reject"></a>
 {% endfor %}
 {% endif %}
 <a href="/user/?uid={{ user.id }}"><input class="btn btn-primary" type="button" value="return"></a>

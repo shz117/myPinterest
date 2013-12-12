@@ -6,6 +6,8 @@
     <link href="/media/css/boardpage.css" rel="stylesheet"></head>
 </head>
 <body>
+<div class="container" style="margin-bottom: 200px;margin-top: 50px">
+
 <h2>Repin picture</h2>
 <div class="polaroid">
        <img class="pictuure polaroid-img" src="/imgs/{{ pin.picture.image.url }}">
@@ -28,6 +30,14 @@
     <input type="hidden" name="from_pin" value="{{ pin.id }}">
     <input type="submit" value="Submit">
 </form>
+            <br><br>
+    <a href="/boardpage/?b={{ board.id }}">
+    <input class="btn btn-primary" type="button" value="Back to {{ board.name }}">
+</a>
+            <br><br>
+    <a href="/">
+    <input class="btn btn-primary" type="button" value="Go home">
+</a>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="/media/bootstrap/js/bootstrap.js"></script>
 </body>

@@ -5,15 +5,23 @@
     <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
 </head>
 <body>
+    <div class="container" style="margin-bottom: 200px; margin-top: 50px">
 <form method="post" action="">
-    <input type="text" name="boardname" placeholder="Please input board name">
-    <input type="submit" value="Create board">
-    <select name="access">
+    <input class="form-control" style="width: 300px" type="text" name="boardname" placeholder="Please input board name">
+<br>
+    <select class="form-control" style="width: 150px" name="access">
         <option value="2">public</option>
         <option value="1">friends</option>
         <option value="0">private</option>
     </select>
+    <br>
+    <input class="btn btn-primary" type="submit" value="Create board">
 </form>
+    <br><br>
+    <a href="/">
+    <input class="btn btn-primary" type="button" value="Go home">
+</a>
+</div>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="/media/bootstrap/js/bootstrap.js"></script>
 </body>
