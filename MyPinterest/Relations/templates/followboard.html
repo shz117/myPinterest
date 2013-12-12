@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>follow board</title>
+</head>
+<body>
+<h3>Which stream would you like to add {{ board.name }}?</h3>
+<form method="post" action="">
+    <select name="to_stream">
+        {% for stream in streams %}
+           <option value="{{ stream.id }}">{{ stream.name }}</option>
+        {% endfor %}
+    </select>
+    <input type="hidden" name="bid" value="{{ board.id }}">
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>

@@ -1,17 +1,20 @@
 import datetime
 import logging
+from django.views.decorators.csrf import csrf_exempt
 
 from django.shortcuts import render_to_response, redirect
+from django.http import HttpResponseRedirect
 from django.db import DatabaseError
 from django.template import RequestContext
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,logout
 import django.contrib.auth as auth
 
-from MyPinterest.Pinboard.models import Board
+from MyPinterest.Picture.models import Tag, Picture
+from MyPinterest.Pinboard.models import Board , Pin
 from MyPinterest.User.models import User
-from MyPinterest.Relations.models import FollowStream
+from MyPinterest.Relations.models import FollowStream, FriendStatus
 
-
+@csrf_exempt
 def verifyLogin(theUsername, thePassword, ip=None):
     result = {'result': False}
     print theUsername, thePassword
@@ -30,6 +33,7 @@ def verifyLogin(theUsername, thePassword, ip=None):
         result['msg'] = errorMsg
     return result
 
+@csrf_exempt
 def login(request):
     if request.method == 'GET':
         if request.user.is_authenticated():
@@ -56,30 +60,29 @@ def login(request):
         else:
             return render_to_response('login.html', { "errmsg" : "Please input username"}, context_instance=RequestContext(request))
 
+@csrf_exempt
 
 def userpage(request):
-    #get username from session
-    print 'User obj from session!:'
-    print request.user.username
-    user=request.user
-    #get user's own boards
-    boards=Board.objects.filter(owner=user)
-    print boards
-    #get user's follow streams
-    streams = FollowStream.objects.filter(owner=user)
-    context=dict()
-    context['ownBoards']=boards
-    context['Streams']= streams
-    return render_to_response('userpage.html',context, context_instance=RequestContext(request))
+        #get username from session
+        user=request.user
+        #get user's own boards
+        boards=Board.objects.filter(owner=user)
+        print boards
+        #get user's follow streams
+        streams = FollowStream.objects.filter(owner=user)
+        friends = getFriends(user)
+        data=dict()
+        data['ownBoards']=boards
+        data['Streams']= streams
+        data['friends']=friends
+        return render_to_response('userpage.html',data, context_instance=RequestContext(request))
 
 
+@csrf_exempt
 def createUser(data):
     result={'result':False}
     try:
-        print 'Got create password:'
-        print data['pwd']
         user= User.objects.create_user(name=data['username'],email=data['email'],createTime=datetime.datetime.now(),password=data['pwd'])
-        #user.set_password(data['pwd'])
         user.save()
         result['result']=True
     except DatabaseError:
@@ -87,6 +90,7 @@ def createUser(data):
         result['errmsg']=msg
     return result
 
+@csrf_exempt
 def signup(request):
     if request.method=='GET':
         return render_to_response('signup.html',context_instance=RequestContext(request))
@@ -96,6 +100,39 @@ def signup(request):
         if createUserResult['result']:
             #redirect to user homepage, with session??
             request.session['user'] = request.POST['username']
-            return redirect('/userpage')
+            # return redirect('/userpage')
+            return HttpResponseRedirect('/userpage')
         else:
             return render_to_response('signup.html', {"errmsg" : "Sign up failed, username you choosed might be taken"}, context_instance=RequestContext(request))
+
+@csrf_exempt
+def userprofile(request):
+    if request.method=="GET":
+        req_user = request.user
+        uid =request.GET['uid']
+        visit_user = User.objects.get(id=uid)
+        isSelf = req_user==visit_user
+        boards = Board.objects.filter(owner=visit_user)
+        res_boards = [board for board in boards if not (int(board.access_level)==0 or (int(board.access_level)==1 and req_user not in getFriends(visit_user)))]
+        friend_list = getFriends(visit_user)
+        streams = FollowStream.objects.filter(owner=visit_user)
+        data = dict()
+        data['user']=visit_user
+        data['isSelf']=isSelf
+        data['boards']=res_boards
+        data['friends']=friend_list
+        data['streams']=streams
+        return render_to_response('userprofile.html',data, context_instance=RequestContext(request))
+
+def getFriends(user):
+    friend_relations = FriendStatus.objects.filter(from_user=user,status=1) | FriendStatus.objects.filter(to_user=user,status=1)
+    friend_list = []
+    for relation in friend_relations:
+        friend = relation.from_user if relation.to_user==user else relation.to_user
+        friend_list.append(friend)
+    return friend_list
+
+@csrf_exempt
+def signout(request):
+    logout(request)
+    return HttpResponseRedirect('/')

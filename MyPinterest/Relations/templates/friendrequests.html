@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ user }}'s friend requests</title>
+</head>
+<body>
+{% if requests|length == 0 %}
+    <h2>All requests have been processed</h2>
+{% else %}
+<h2>Here is your pendding friend requests:</h2>
+{% for req in requests %}
+    <div><a href="/user/?uid={{ req.from_user.id }}">{{ req.from_user }}</a> would like to add you as a friend.</div>
+    <a href="/acceptrequest/?from_user={{ req.from_user.id }}">
+    <input type="button" value="Accept"></a>
+    <a href="/rejectrequest/?from_user={{ req.from_user.id }}">
+    <input type="button" value="Reject"></a>
+{% endfor %}
+{% endif %}
+<a href="/user/?uid={{ user.id }}"><input type="button" value="return"></a>
+</body>
+</html>

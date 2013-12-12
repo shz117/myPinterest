@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>search result</title>
+    <link href="/media/css/boardpage.css" rel="stylesheet"></head>
+</head>
+<body>
+{% if not tag and not username and not stname%}
+    <h2>No search results, please check for search key words</h2>
+{% endif %}
+{% if tag %}
+<h2>Here is your result for "{{ tag }}", ordered by {{ by }}</h2>
+{% for pin in pins %}
+    <div class="polaroid">
+    <a href="/pin/?id={{ pin.id }}">
+        <img class="pictuure polaroid-img" src="/imgs/{{ pin.picture.image.url }}">
+    </a>
+    <p class="polaroid-p">in {{ pin.to_board.name }} from {{ pin.to_board.owner }}</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endfor %}
+{% endif %}
+{% if username %}
+<h2>Here is your result for "{{ username }}":</h2>
+{% for user in users %}
+    <a href="/user/?uid={{ user.id }}">
+        <div>{{ user }}</div>
+    </a>
+{% endfor %}
+{% endif %}
+{% if stname %}
+<h2>Here is your result for "{{ stname }}":</h2>
+{% for stream in streams %}
+    <a href="/streampage/?sid={{ stream.id }}">
+        <div>{{ stream.name }}</div>
+    </a>
+{% endfor %}
+{% endif %}
+<a href="/search">
+    <input value="return to search" type="button">
+</a>
+</body>
+</html>

@@ -13,5 +13,14 @@
     <input type="text" name="description" placeholder="Put some words about this picture">
     <input type="submit" value="Submit">
 </form>
+
+<h2>add from url</h2>
+<form method="post" action="/newpin">
+    <input type="text" name="pic_url" placeholder="Paste image url here">
+    <input type="hidden" name="board" value="{{ board.id }}">
+    <br>
+    <input type="text" name="description" placeholder="Put some words about this picture">
+    <input type="submit" value="Submit">
+</form>
 </body>
 </html>

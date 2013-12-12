@@ -8,16 +8,29 @@
 <a href="/boardpage/?b={{ board.id }}">
 <h2>{{ board.name }}</h2>
 </a>
-<a href="/repin/?pin={{ pin.id }}">Repin it!</a>
+<a href="/repin/?pin={{ pin.id }}"><input type="button" value="Repin it"></a>
+{% if isOwner %}
+<a href="/deletepin/?pin={{ pin.id }}&board={{ board.id }}"><input type="button" value="Delete this pin"></a>
+{% endif %}
 <div class="polaroid">
        <img class="pictuure polaroid-img" src="/imgs/{{ picture.image.url }}">
-    <p class="polaroid-p">by {{ picture.first_piner }}</p>
+    <p class="polaroid-p">by <a href="/user/?uid={{ board.owner.id }}">{{ board.owner }}</a></p>
 </div>
 <br>
 <br>
 <br>
 <br>
 <br>
+<div>{{ likes }} likes</div>
+{% if liked %}
+    <a href="/unlike/?pid={{ picture.id }}&pin={{ pin.id }}">
+    <input type="button" value="Unlike">
+    </a>
+{% else %}
+    <a href="/like/?pid={{ picture.id }}&pin={{ pin.id }}">
+    <input type="button" value="Like">
+    </a>
+{% endif %}
 <p>
 {% for tag in tags %}
     <span>{{ tag.name }}</span>,

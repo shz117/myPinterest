@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ user }}'s profile</title>
+</head>
+<body>
+<h1>{{ user }}</h1>
+{% if not isSelf %}
+    <a href="/sendfriendrequest/?to_uid={{ user.id }}">
+    <input type="button" value="Request Friend">
+    </a>
+{% else %}
+    <a href="/friendrequests/?uid={{ user.id }}">
+    <input type="button" value="View friend invitations">
+    </a>
+{% endif %}
+<h3>Email:</h3>
+<span>{{ user.email }}</span>
+<h3>Create:</h3>
+<span>{{ user.createTime }}</span>
+<h3>Last login:</h3>
+<span>{{ user.lastLoginTime }}</span>
+<h3>{{ user }}'s pin boards:</h3>
+{% for board in boards %}
+        <a href="/boardpage/?b={{ board.id }}">{{ board.name }}</a>
+{% endfor %}
+<h3>{{ user }}'s steams:</h3>
+{% for stream in streams %}
+        <a href="/streampage/?sid={{ stream.id }}">{{ stream.name }}</a>
+{% endfor %}
+<h3>{{ user }}'s friends:</h3>
+{% for friend in friends %}
+        <a href="/user/?uid={{ friend.id }}">{{ friend }}</a><br>
+{% endfor %}
+<a href="/">
+    <input type="button" value="Go home">
+</a>
+</body>
+</html>

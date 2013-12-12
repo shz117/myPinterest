@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stream: {{ stream.name }}</title>
+    <link href="/media/css/boardpage.css" rel="stylesheet"></head>
+<body>
+
+<h1><a href="/">{{ user }}</a>'s home</h1>
+<h2>{{ stream.name }} has these boards:</h2>
+{% for board in boards %}
+    <div>
+    <a href="/boardpage/?b={{ board.id }}">{{ board.name }}</a>
+    </div>
+{% endfor %}
+{% if isOwner %}
+    <a href="/deletestream/?sid={{ stream.id }}">
+        <input type="button" value="Delete stream">
+    </a>
+{% endif %}
+<a href="/search">
+<input value="Find boards" type="button">
+</a>
+</body>
+</html>
