@@ -46,9 +46,10 @@ User can: like/unlike picture; add tags(pin owner only); add comments; delete pi
 Use:
 
 1. install python and django
-2. cd /dir/you/want/put/it 
-3. git clone https://github.com/shz117/myPinterest.git
-4. cd /manage.py/dir
-5. python manage.py runserver
-6. access by http://localhost:8000/
-7. Have fun! :-)
+2. configure db(mySQL in this project) according to settings.py 
+3. cd /dir/you/want/put/it 
+4. git clone https://github.com/shz117/myPinterest.git
+5. cd /manage.py/dir
+6. python manage.py runserver
+7. access by http://localhost:8000/
+8. Have fun! :-)
