@@ -2,7 +2,7 @@ myPinterest
 ===========
 
 pinterest like web app
-
+![myPinterest Screenshot](https://github.com/shz117/myPinterest/master/login.png)
 Use:
 
 1. install python and django
