@@ -3,8 +3,13 @@
 <head>
     <title>search result</title>
     <link href="/media/css/boardpage.css" rel="stylesheet"></head>
+<link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
 </head>
 <body>
+<div class="container" style="margin-bottom: 200px; margin-top: 50px">
+<a href="/search">
+    <input class="btn btn-primary" value="return to search" type="button">
+</a>
 {% if not tag and not username and not stname%}
     <h2>No search results, please check for search key words</h2>
 {% endif %}
@@ -15,22 +20,20 @@
     <a href="/pin/?id={{ pin.id }}">
         <img class="pictuure polaroid-img" src="/imgs/{{ pin.picture.image.url }}">
     </a>
-    <p class="polaroid-p">in {{ pin.to_board.name }} from {{ pin.to_board.owner }}</p>
+    <p class="polaroid-p">in <a href="/boardpage/?b={{ pin.to_board.id }}">{{ pin.to_board.name }}</a> from <a href="/user/?uid={{ pin.to_board.owner.id }}">{{ pin.to_board.owner }}</a></p>
     </div>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
 {% endfor %}
 {% endif %}
 {% if username %}
 <h2>Here is your result for "{{ username }}":</h2>
-{% for user in users %}
-    <a href="/user/?uid={{ user.id }}">
-        <div>{{ user }}</div>
-    </a>
-{% endfor %}
+<table class="table table-striped table-bordered" style="width: 300px">
+    {% for user in users %}
+        <tr><td><a href="/user/?uid={{ user.id }}">{{ user }}</a></td></tr>
+    {% endfor %}
+    </table>
+    <br>
 {% endif %}
 {% if stname %}
 <h2>Here is your result for "{{ stname }}":</h2>
@@ -41,7 +44,10 @@
 {% endfor %}
 {% endif %}
 <a href="/search">
-    <input value="return to search" type="button">
+    <input class="btn btn-primary" value="return to search" type="button">
 </a>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

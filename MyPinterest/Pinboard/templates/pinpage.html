@@ -2,70 +2,88 @@
 <html>
 <head>
     <title>pin page</title>
+    <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
     <link href="/media/css/boardpage.css" rel="stylesheet"></head>
 </head>
 <body>
+<div class="container" style="margin-bottom: 200px;margin-top: 50px">
 <a href="/boardpage/?b={{ board.id }}">
 <h2>{{ board.name }}</h2>
 </a>
-<a href="/repin/?pin={{ pin.id }}"><input type="button" value="Repin it"></a>
+<a href="/repin/?pin={{ pin.id }}"><input class="btn btn-success" type="button" value="Repin it"></a>
 {% if isOwner %}
-<a href="/deletepin/?pin={{ pin.id }}&board={{ board.id }}"><input type="button" value="Delete this pin"></a>
+<a href="/deletepin/?pin={{ pin.id }}&board={{ board.id }}"><input class="btn btn-danger" type="button" value="Delete this pin"></a>
 {% endif %}
+<br>
+<br>
 <div class="polaroid">
        <img class="pictuure polaroid-img" src="/imgs/{{ picture.image.url }}">
     <p class="polaroid-p">by <a href="/user/?uid={{ board.owner.id }}">{{ board.owner }}</a></p>
 </div>
 <br>
 <br>
-<br>
-<br>
-<br>
-<div>{{ likes }} likes</div>
+<div style="font-family: cursive">{{ likes }} likes</div>
 {% if liked %}
     <a href="/unlike/?pid={{ picture.id }}&pin={{ pin.id }}">
-    <input type="button" value="Unlike">
+    <i class="btn btn-default glyphicon glyphicon-hand-down"> </i>
     </a>
 {% else %}
     <a href="/like/?pid={{ picture.id }}&pin={{ pin.id }}">
-    <input type="button" value="Like">
+    <i class="btn btn-default glyphicon glyphicon-hand-up"> </i>
     </a>
 {% endif %}
+<br>
+<br>
 <p>
 {% for tag in tags %}
-    <span>{{ tag.name }}</span>,
+    <span class="btn btn-info">{{ tag.name }}</span>
 {% endfor %}
 </p>
 {% if isOwner %}
     <form method="post" action="">
-        <input type="text" name="tag" placeholder="new tag">
         <input type="hidden" name="picture"  value="{{ picture.id }}">
         <input type="hidden" name="pin"  value="{{ pin.id }}">
-        <input type="submit" value="Submit">
+        <table>
+        <tr>
+            <td>
+            <input class="form-control" style="width: 100px" type="text" name="tag" placeholder="new tag">
+            </td>
+            <td>
+            <input class="btn btn-success" type="submit" value="Submit">
+            </td>
+        </tr>
+        </table>
     </form>
+<br>
 {% endif %}
+<div style="box-sizing: border-box;
+border-radius: 5px;
+border: dashed 1px;
+background-color: gainsboro;
+width: 400px;">
 <h3>Description</h3>
     <div>{{ pin.description }}</div>
-{#{% load threadedcomments_tags %}#}
+</div>
 {% block content %}
-    <h1>Comments:</h1>
-    <ul>
+    <h2>Comments:</h2>
+    <table class="table table-striped" style="width: 700px">
         {% for comment in comments %}
-            <li>
-                <div class="message">
-                    <p class="title">{{ comment.user }} commented at {{ comment.comment_time }}</p>
-
-                    <p class="text">{{ comment.payload }}</p>
-                </div>
-            </li>
+            <tr><td>
+                  <a href="/user/?uid={{ comment.user.id }}">{{ comment.user }}</a> commented: <div class="pull-right">{{ comment.comment_time }}</div><br>
+                 {{ comment.payload }}
+            <td></tr>
         {% endfor %}
-    </ul>
+    </table>
 {% endblock %}
     <form method="post" action="">
-        <input type="text" name="payload" placeholder="Please comment here">
         <input type="hidden" name="pid" value="{{ pin.id }}">
         <input type="hidden" name="bid" value="{{ board.id }}">
-        <input type="submit" value="Submit">
+        <textarea class="form-control" style="width: 500px;float:left" type="text" name="payload" placeholder="Please comment here" rows="3"></textarea>
+
+        <span><input class="btn btn-info" type="submit" value="Submit" style="margin-left: 20px"></span>
     </form>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
+</div>
 </body>
 </html>

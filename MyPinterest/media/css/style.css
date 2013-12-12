@@ -1,0 +1,16 @@
+.login-container {
+  margin: 0 auto;
+  width: 600px; /* Whatever exact width you are looking for (not bound by preset bootstrap widths) */
+
+}
+
+
+
+.highlight{
+    font-size: 14px;
+border: 2px dashed #c8c8c8;
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+padding: 10px 12px;
+}

@@ -2,8 +2,10 @@
 <html>
 <head>
     <title>{{ user }}'s friend requests</title>
+    <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
 </head>
 <body>
+    <div class="container" style="margin-bottom: 200px; margin-top: 50px">
 {% if requests|length == 0 %}
     <h2>All requests have been processed</h2>
 {% else %}
@@ -16,6 +18,9 @@
     <input type="button" value="Reject"></a>
 {% endfor %}
 {% endif %}
-<a href="/user/?uid={{ user.id }}"><input type="button" value="return"></a>
+<a href="/user/?uid={{ user.id }}"><input class="btn btn-primary" type="button" value="return"></a>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
     <head>
+        <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
+        <link href="/media/css/style.css" rel="stylesheet"></head>
         <style type="text/css">
 
             body {font-family:Arial, Sans-Serif;}
@@ -28,18 +30,18 @@
                 {% csrf_token %}
                 <h1>Sign Up for FREE!</h1>
                 <h2>{% if errmsg %} {{ errmsg }}{% endif %}</h2>
-                <div class="line"><label>Username *: </label><input type="text" id="username" name="username" /></div>
-                <div class="line"><label>Password *: </label><input type="password" id="pwd" name="pwd" /></div>
+                <div><label>Username *: </label><input class="form-control" type="text" id="username" name="username" /></div>
+                <div><label>Password *: </label><input class="form-control" type="password" id="pwd" name="pwd" /></div>
                 <!-- You may want to consider adding a "confirm" password box also -->
-                <div class="line"><label>Email *: </label><input type="email" id="email" name="email" /></div>
+                <div><label>Email *: </label><input class="form-control" type="email" id="email" name="email" /></div>
                 <!-- Valid input types: http://www.w3schools.com/html5/html5_form_input_types.asp -->
-                <div class="line submit"><input type="submit" value="Submit" /></div>
-
-                <p>Note: Please make sure your details are correct before submitting form and that all fields marked with * are completed!.</p>
+                <div><input class="btn btn-success pull-right" type="submit" value="Submit" /></div>
+                <br>
+            <br>
+                <p class="highight">Note: Please make sure your details are correct before submitting form and that all fields marked with * are completed!.</p>
             </form>
         </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
     </body>
-<script>
-
-</script>
 </html>

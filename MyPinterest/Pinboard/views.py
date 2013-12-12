@@ -67,7 +67,7 @@ def boardpage(request,bid=None):
 
         data['board']=board
         data['pictures']=pics
-        data['user']=request.user #TODO should be other user object
+        data['user']=request.user
         data['isOwner']=isOwner
         data['followed']=followed
     except DatabaseError:

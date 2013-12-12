@@ -2,25 +2,57 @@
 <html>
 <head>
     <title>search by tag</title>
+    <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
 </head>
 <body>
+<div class="container" style="margin-bottom: 200px; margin-top: 50px">
 <form method="post" action="">
-        <input type="search" name="tag" placeholder="search for tags">
-        <select name="by">
+        <table>
+        <tr>
+            <td>
+                <input class="form-control" style="width: 300px" type="search" name="tag" placeholder="search for tags">
+            </td>
+            <td>
+        <select class="form-control" style="width: 200px" name="by">
             <option value="time">Picture creation time</option>
             <option value="likes">Picture liked times</option>
         </select>
-        <input type="submit" value="search">
+            </td>
+            <td> <input class="btn btn-info" type="submit" value="search">
+            </td>
+        </tr>
+            </table>
+
+
+</form>
+<br>
+<form method="post" action="">
+        <table>
+            <tr>
+                <td>
+        <input class="form-control" style="width: 200px" type="search" name="user" placeholder="search for user">
+                </td>
+                <td>
+        <input class="btn btn-info" type="submit" value="search">
+                </td>
+            </tr>
+        </table>
 </form>
 
 <form method="post" action="">
-        <input type="search" name="user" placeholder="search for user">
-        <input type="submit" value="search">
+     <table>
+            <tr>
+                <td>
+        <input class="form-control" style="width: 200px" type="search" name="stream" placeholder="search for stream">
+         </td>
+                <td>
+        <input class="btn btn-info" type="submit" value="search">
+                     </td>
+            </tr>
+        </table>
 </form>
-
-<form method="post" action="">
-        <input type="search" name="stream" placeholder="search for stream">
-        <input type="submit" value="search">
-</form>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

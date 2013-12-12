@@ -2,18 +2,36 @@
 <html>
 <head>
     <title>Pi--My Mni Pinterest!</title>
+    <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
+    <link href="/media/css/style.css" rel="stylesheet"></head>
+    <style type="text/css">
+{#    body {#}
+{#     margin: 0;#}
+{#     background: url('http://acesubido-themes.herokuapp.com/static/g97mPihiE2tz8TvQh4kQe9eohoyHWy7cunVrUSKTky2.jpg');#}
+{#     background-size: 1400px 800px;#}
+{#     background-repeat:no-repeat;#}
+{#    display: compact;#}
+{#     font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;#}
+{#    }#}
+    </style>
 </head>
 <body>
-<div id="welcome">Welcome to my mini Pinterest! Enjoy!</div>
-<div id="form-div">
-    <form id="login_form" class="form-signin" method="post">
+<h1 class="text-center">Welcome to my mini Pinterest! Enjoy!</h1>
+<div class="container" style="margin-left: 550px;
+                              width: 400px;
+                       ">
+    <div class="row">
+    <div class="span12">
+    <div class="clear-form">
+    <form id="login_form" class="col-md-6" method="post">
 					{% csrf_token %}
-					<h2>{% if errmsg %} {{ errmsg }} {% else %} Please Sign In{% endif %}</h2>
+                    <div class="form-group">
+                    <h2 class="header-center">{% if errmsg %} {{ errmsg }} {% else %} Sign In{% endif %}</h2>
+                    </div>
 
-
-					<input id="login_username" name="username" type="text"  placeholder="User Name" >
+					<input class="form-control" id="login_username" name="username" type="text"  placeholder="User Name" >
 					<br/>
-					<input id="login_password" name="pwd" type="password" maxlength="12" placeholder="Password" >
+					<input class="form-control" id="login_password" name="pwd" type="password" maxlength="12" placeholder="Password" >
 					<div class="row-fluid">
 						<div class="span4">
 							<label class="checkbox">
@@ -21,11 +39,15 @@
 								Keep signed in</label>
 						</div>
 					</div>
-					<input id="sign_in" value="Sign In" class="btn  btn-primary" type="submit">
-					<input id="sign_up" value="Sign Up" class="btn  btn-primary" type="button">
-				</form>
+					<input id="sign_in" value="Sign In" class="btn  btn-success" type="submit">
+					<input id="sign_up" value="Sign Up" class="btn  btn-info" type="button">
+	</form>
+    </div>
+    </div>
+    </div>
 </div>
-
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
 </body>
 <script>
     var signUpBtn = document.getElementById('sign_up');

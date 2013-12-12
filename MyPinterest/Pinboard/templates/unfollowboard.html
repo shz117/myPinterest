@@ -2,17 +2,27 @@
 <html>
 <head>
     <title>unfollow board</title>
+    <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
 </head>
 <body>
+    <div class="container" style="margin-bottom: 200px; margin-top: 50px">
 <h3>Which stream would you like to remove {{ board.name }} from?</h3>
 <form method="post" action="">
-    <select name="from_stream">
+    <input type="hidden" name="bid" value="{{ board.id }}">
+    <table>
+    <tr><td>
+    <select class="form-control" style="width: 300px" name="from_stream">
         {% for stream in streams %}
            <option value="{{ stream.id }}">{{ stream.name }}</option>
         {% endfor %}
     </select>
-    <input type="hidden" name="bid" value="{{ board.id }}">
-    <input type="submit" value="OK">
+    </td><td>
+    <input class="btn btn-warning" type="submit" value="OK">
+    </td></tr>
+    </table>
 </form>
+    </div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

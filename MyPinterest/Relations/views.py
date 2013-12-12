@@ -21,9 +21,20 @@ def streampage(request):
     sid = request.GET['sid']
     stream = FollowStream.objects.get(id=sid)
     boards = stream.boards.all()
+    board_img = []
+    for board in boards:
+        pins = Pin.objects.filter(to_board=board)
+        pl = list(pins)
+        if pl:
+            pin = pl[0]
+            fimg = pin.picture
+            item = dict()
+            item['board'] = board
+            item['img']=fimg
+            board_img.append(item)
     data = dict()
     isOwner = stream.owner==request.user
-    data['boards']=boards
+    data['boards']=board_img
     data['stream']=stream
     data['isOwner']=isOwner
     return render_to_response('streampage.html',data,context_instance=RequestContext(request))

@@ -2,23 +2,42 @@
 <html>
 <head>
     <title>Stream: {{ stream.name }}</title>
+    <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
     <link href="/media/css/boardpage.css" rel="stylesheet"></head>
 <body>
-
+<div class="container" style="margin-bottom: 200px;margin-top: 50px">
 <h1><a href="/">{{ user }}</a>'s home</h1>
-<h2>{{ stream.name }} has these boards:</h2>
-{% for board in boards %}
-    <div>
-    <a href="/boardpage/?b={{ board.id }}">{{ board.name }}</a>
-    </div>
-{% endfor %}
+<table class="table table-bordered table-striped" style="width: 180px">
+    <thead>
+        <h2>Boards in {{ stream.name }}:</h2>
+    </thead>
+    <tbody>
+    {% for item in boards %}
+        <tr><td>
+            <table>
+                <thead >
+                <div class="h3">{{ item.board.name }}</div>
+                </thead>
+                <tr><td>
+                <a href="/boardpage/?b={{ item.board.id }}">
+                    <img src="/imgs/{{ item.img.image.url }}"  class="img-thumbnail" style="width: 150px;height: 150px">
+                </a>
+                </td></tr>
+            </table>
+        </td></tr>
+    {% endfor %}
+    </tbody>
+    </table>
 {% if isOwner %}
     <a href="/deletestream/?sid={{ stream.id }}">
-        <input type="button" value="Delete stream">
+        <input class="btn btn-danger" type="button" value="Delete stream">
     </a>
 {% endif %}
 <a href="/search">
-<input value="Find boards" type="button">
+<input class="btn btn-info" value="Find boards" type="button">
 </a>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

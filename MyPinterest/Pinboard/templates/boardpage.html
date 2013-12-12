@@ -2,32 +2,20 @@
 <html>
 <head>
     <title>Board: {{ board.name }}</title>
+    <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
     <link href="/media/css/boardpage.css" rel="stylesheet"></head>
 <body>
-
+<div class="container" style="margin-bottom: 200px;margin-top: 50px">
 <h1><a href="/">{{ user }}</a>'s home</h1>
-<h2>{{ board.name }}</h2>
 {% if isOwner %}
 <a href="/deleteboard/?bid={{ board.id }}">
-<input  type="button" value="Delete Board">
+<input  class="btn btn-danger pull-right" style="margin-right: 20px" type="button" value="Delete Board">
 </a>
 {% endif %}
-{% for item in pictures %}
-    <div class="polaroid">
-    <a href="/pin/?id={{ item.pin }}">
-        <img class="pictuure polaroid-img" src="/imgs/{{ item.picture.image.url }}">
-    </a>
-    <p class="polaroid-p">by {{ board.owner }}</p>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-{% endfor %}
+<table>
+<thead><h2>{{ board.name }}</h2></thead>
 {% if isOwner %}
-<input id="new-pin" value="New Pin" type="button">
-</body>
+<input class="btn btn-success" id="new-pin" value="New Pin" type="button">
 <script>
     var newPinBtn = document.getElementById('new-pin');
     newPinBtn.onclick=function(){
@@ -37,12 +25,32 @@
 {% else %}
     {% if followed %}
     <a href="/unfollowboard/?bid={{ board.id }}">
-    <input  type="button" value="unFollow">
+    <input class="btn btn-info" type="button" value="unFollow">
     </a>
     {% else %}
     <a href="/followboard/?bid={{ board.id }}">
-    <input  type="button" value="Follow">
+    <input class="btn btn-info" type="button" value="Follow">
     </a>
     {% endif %}
 {% endif %}
+<tbody>
+{% for item in pictures %}
+    <tr><td>
+    <div class="polaroid">
+    <a href="/pin/?id={{ item.pin }}">
+        <img class="pictuure polaroid-img" src="/imgs/{{ item.picture.image.url }}">
+    </a>
+    <p class="polaroid-p">by {{ board.owner }}</p>
+    </div>
+    <br>
+    <br>
+
+    </td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
+</body>
 </html>

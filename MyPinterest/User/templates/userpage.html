@@ -2,46 +2,81 @@
 <html>
 <head>
     <title>{{ user }}'s home page</title>
+    <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
+    <link href="/media/css/style.css" rel="stylesheet"></head>
 {#    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>#}
 </head>
 <body>
-    <h2>Welcome <a href="/user/?uid={{ user.id }}">{{ user }}!</a></h2>
-    <a href="/signout"><input type="button" value="sign me out"></a>
-    {% if ownBoards|length == 0 %}
+    <div class="container" style="margin-bottom: 200px; margin-top: 50px">
+    <h2>Welcome, <a href="/user/?uid={{ user.id }}">{{ user }}!</a></h2>
+    <a href="/signout"><input class="btn btn-warning pull-right" style="margin-right: 20px" type="button" value="sign me out"></a>
+    {% if boards|length == 0 %}
     <h3>You don't have any boards, create one by button bellow.</h3>
     {% else %}
-    <h3>Your Boards:</h3>
-    {% for board in ownBoards %}
-        <a href="/boardpage/?b={{ board.id }}">{{ board.name }}</a>
+    <table class="table table-bordered table-striped" style="width: 180px">
+    <thead>
+        <h3>Your Boards:</h3>
+    </thead>
+    <tbody>
+    {% for item in boards %}
+        <tr><td>
+            <table>
+                <thead >
+                <div class="h3">{{ item.board.name }}</div>
+                </thead>
+                <tr><td>
+                <a href="/boardpage/?b={{ item.board.id }}">
+                    <img src="/imgs/{{ item.img.image.url }}"  class="img-thumbnail" style="width: 150px;height: 150px">
+                </a>
+                </td></tr>
+            </table>
+        </td></tr>
     {% endfor %}
+    </tbody>
+    </table>
     {% endif %}
     <br>
     {% if Streams|length == 0 %}
     <h3>You don't have any follow streams, create one by button bellow.</h3>
     {% else %}
-    <h3>Your Follow Streams:</h3>
+    <table class="table table-bordered table-striped" style="width: 300px">
+    <thead>
+        <h3>Your Follow Streams:</h3>
+    </thead>
+    <tbody>
     {% for stream in Streams %}
-        <a href="/streampage/?sid={{ stream.id }}">{{ stream.name }}</a>
+        <tr><td><a href="/streampage/?sid={{ stream.id }}">{{ stream.name }}</a></td></tr>
     {% endfor %}
+    </tbody>
+    </table>
     {% endif %}
     <br>
     {% if friends|length == 0 %}
     <h3>You don't have any friends, explore myPinterest from search button below.</h3>
     {% else %}
+    <table class="table table-striped table-bordered" style="width: 300px">
+    <thead>
     <h3>Your friends:</h3>
+    </thead>
+    <tbody>
     {% for friend in friends %}
-        <a href="/user/?uid={{ friend.id }}">{{ friend }}</a>
+        <tr><td><a href="/user/?uid={{ friend.id }}">{{ friend }}</a></td></tr>
     {% endfor %}
+    </tbody>
+    </table>
     <br>
     {% endif %}
     <a href="/createboard">
-    <input type="button" value="Create new Board">
+    <input class="btn btn-success" type="button" value="Create new Board">
     </a>
     <a href="/createstream">
-    <input type="button" value="Create new Stream">
+    <input class="btn btn-success" type="button" value="Create new Stream">
     </a>
     <a href="/search">
-    <input type="button" id="search" value="Search myPinterest">
+    <input class="btn btn-info" type="button" id="search" value="Search myPinterest">
     </a>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
 </body>
 </html>

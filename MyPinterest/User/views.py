@@ -67,12 +67,22 @@ def userpage(request):
         user=request.user
         #get user's own boards
         boards=Board.objects.filter(owner=user)
-        print boards
+        board_img = []
+        for board in boards:
+            pins = Pin.objects.filter(to_board=board)
+            pl = list(pins)
+            if pl:
+                pin = pl[0]
+            fimg = pin.picture
+            item = dict()
+            item['board'] = board
+            item['img']=fimg
+            board_img.append(item)
         #get user's follow streams
         streams = FollowStream.objects.filter(owner=user)
         friends = getFriends(user)
         data=dict()
-        data['ownBoards']=boards
+        data['boards']=board_img
         data['Streams']= streams
         data['friends']=friends
         return render_to_response('userpage.html',data, context_instance=RequestContext(request))
@@ -114,13 +124,26 @@ def userprofile(request):
         isSelf = req_user==visit_user
         boards = Board.objects.filter(owner=visit_user)
         res_boards = [board for board in boards if not (int(board.access_level)==0 or (int(board.access_level)==1 and req_user not in getFriends(visit_user)))]
+        board_img = []
+        for board in res_boards:
+            pins = Pin.objects.filter(to_board=board)
+            pl = list(pins)
+            if pl:
+                pin = pl[0]
+                fimg = pin.picture
+                item = dict()
+                item['board'] = board
+                item['img']=fimg
+                board_img.append(item)
         friend_list = getFriends(visit_user)
+        isFriend = request.user in friend_list
         streams = FollowStream.objects.filter(owner=visit_user)
         data = dict()
         data['user']=visit_user
         data['isSelf']=isSelf
-        data['boards']=res_boards
+        data['boards']=board_img
         data['friends']=friend_list
+        data['isFriend']=isFriend
         data['streams']=streams
         return render_to_response('userprofile.html',data, context_instance=RequestContext(request))
 
