@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ user }}'s profile</title>
+    <link href="/media/bootstrap/css/bootstrap.css" rel="stylesheet"></head>
+</head>
+<body>
+<div class="container" style="margin-bottom: 200px; margin-top: 50px">
+    <form method="post" action="">
+        <table>
+            <tr>
+                <td>
+        <input class="form-control" type="text" style="width: 300px" name="email" placeholder="Input your new email address here">
+                </td><td>
+        <input class="btn btn-success"  type="submit" value="Submit">
+            </td></tr>
+        </table>
+    </form>
+    <br>
+    <a href="/user/?uid={{ user.id }}">
+    <input class="btn btn-primary" type="button" value="Cancel">
+</a>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="/media/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

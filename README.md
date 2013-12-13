@@ -11,8 +11,10 @@ User home page: all boards, follow streams and friends
 ![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/userpage.png)
 User profile page: public page also for settings and friend request
 ![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/userprofile.png)
-Search pictures by tag, key words; search user by name; search follow stream by keywords
+Search pictures by tag, key words; search user by name; search follow stream by keywords; recommendations (feeling lucky!)
 ![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/search.png)
+Recommendations
+![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/recommend.png)
 Search results
 ![myPinterest Screenshot](https://raw.github.com/shz117/myPinterest/master/searchresult.png)
 Board page: all pins in it. Owner can delete board here; visitor can follow board here

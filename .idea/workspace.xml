@@ -34,17 +34,21 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="67" selection-start="3121" selection-end="3121" vertical-scroll-proportion="-4.230769" vertical-offset="880" max-vertical-offset="3510">
-              <folding />
+            <state line="261" column="29" selection-start="10302" selection-end="10302" vertical-scroll-proportion="-55.0" vertical-offset="3007" max-vertical-offset="4624">
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Django default" pinned="false" current="false" current-in-tab="false">
-        <entry file="dbDummy://db-console:/bdb2151/d2e2868b-9dbf-49fd-b830-573adcdd8fa8/">
+      <file leaf-file-name="recommends.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/recommends.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="30" selection-start="30" selection-end="30" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
-              <folding />
+            <state line="21" column="42" selection-start="558" selection-end="558" vertical-scroll-proportion="-11.25" vertical-offset="45" max-vertical-offset="855">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,8 +56,13 @@
       <file leaf-file-name="userprofile.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyPinterest/User/templates/userprofile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="35" selection-start="463" selection-end="480" vertical-scroll-proportion="-4.7916665" vertical-offset="95" max-vertical-offset="1575">
-              <folding />
+            <state line="7" column="70" selection-start="0" selection-end="232" vertical-scroll-proportion="-2.1" vertical-offset="0" max-vertical-offset="1665">
+              <folding>
+                <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,33 +70,9 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyPinterest/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="79" selection-start="1760" selection-end="1780" vertical-scroll-proportion="-6.3846154" vertical-offset="374" max-vertical-offset="750">
+            <state line="20" column="59" selection-start="749" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="780">
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pinpage.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/pinpage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="8" selection-start="1398" selection-end="1398" vertical-scroll-proportion="0.3409091" vertical-offset="450" max-vertical-offset="1575">
-              <folding>
-                <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#span#0;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="repinpage.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/repinpage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="22" selection-start="312" selection-end="312" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="735">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,7 +81,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyPinterest/User/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="138" selection-start="4977" selection-end="4978" vertical-scroll-proportion="-4.8076925" vertical-offset="1570" max-vertical-offset="2355">
+            <state line="175" column="61" selection-start="6783" selection-end="6783" vertical-scroll-proportion="0.0" vertical-offset="2043" max-vertical-offset="2520">
               <folding />
             </state>
           </provider>
@@ -105,7 +90,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyPinterest/Relations/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="21" selection-start="3322" selection-end="3322" vertical-scroll-proportion="-7.1153846" vertical-offset="1240" max-vertical-offset="2235">
+            <state line="129" column="68" selection-start="4475" selection-end="4532" vertical-scroll-proportion="0.0" vertical-offset="1575" max-vertical-offset="2235">
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -113,26 +98,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newpin.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/newpin.html">
+      <file leaf-file-name="changeemail.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/MyPinterest/User/templates/changeemail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="1278" selection-end="1539" vertical-scroll-proportion="-4.5" vertical-offset="297" max-vertical-offset="675">
+            <state line="18" column="4" selection-start="605" selection-end="605" vertical-scroll-proportion="0.5555556" vertical-offset="60" max-vertical-offset="480">
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boardpage.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/boardpage.html">
+      <file leaf-file-name="homepage.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyPinterest/User/templates/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="4" selection-start="1488" selection-end="1584" vertical-scroll-proportion="-8.875" vertical-offset="597" max-vertical-offset="975">
+            <state line="36" column="7" selection-start="956" selection-end="1259" vertical-scroll-proportion="-12.0" vertical-offset="252" max-vertical-offset="630">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pinpage.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/pinpage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="95" column="0" selection-start="3248" selection-end="3356" vertical-scroll-proportion="-7.0" vertical-offset="1197" max-vertical-offset="1575">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="0" selection-start="1692" selection-end="1798" vertical-scroll-proportion="-5.125" vertical-offset="717" max-vertical-offset="1095">
               <folding>
-                <element signature="n#style#0;n#input#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -148,22 +150,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/MyPinterest/Relations/templates/followboard.html" />
-        <option value="db-console:/bdb2151/d2e2868b-9dbf-49fd-b830-573adcdd8fa8/" />
-        <option value="$PROJECT_DIR$/MyPinterest/User/views.py" />
-        <option value="$PROJECT_DIR$/MyPinterest/Relations/templates/friendrequests.html" />
-        <option value="$PROJECT_DIR$/MyPinterest/User/templates/userprofile.html" />
-        <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/search.html" />
-        <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/createboard.html" />
         <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/createstream.html" />
         <option value="$PROJECT_DIR$/MyPinterest/User/templates/userpage.html" />
         <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/searchresult.html" />
         <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/boardpage.html" />
         <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/newpin.html" />
-        <option value="$PROJECT_DIR$/MyPinterest/Pinboard/views.py" />
-        <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/repinpage.html" />
         <option value="$PROJECT_DIR$/MyPinterest/Relations/views.py" />
         <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/pinpage.html" />
+        <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/repinpage.html" />
+        <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/search.html" />
+        <option value="db-console:/bdb2151/d2e2868b-9dbf-49fd-b830-573adcdd8fa8/" />
+        <option value="$PROJECT_DIR$/MyPinterest/Pinboard/views.py" />
+        <option value="$PROJECT_DIR$/MyPinterest/Pinboard/templates/recommends.html" />
+        <option value="$PROJECT_DIR$/MyPinterest/urls.py" />
+        <option value="$PROJECT_DIR$/MyPinterest/User/templates/userprofile.html" />
+        <option value="$PROJECT_DIR$/MyPinterest/User/views.py" />
+        <option value="$PROJECT_DIR$/MyPinterest/User/templates/changeemail.html" />
       </list>
     </option>
   </component>
@@ -349,6 +351,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyPinterest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyPinterest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyPinterest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Picture" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -647,7 +667,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="32" y="22" width="1400" height="790" extended-state="0" />
+    <frame x="32" y="22" width="1400" height="790" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3294964" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -692,148 +712,135 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MyPinterest/Relations/templates/friendrequests.html">
+    <entry file="file://$PROJECT_DIR$/MyPinterest/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="27" selection-start="671" selection-end="684" vertical-scroll-proportion="-6.875" vertical-offset="75" max-vertical-offset="465">
+        <state line="16" column="0" selection-start="477" selection-end="477" vertical-scroll-proportion="-7.269231" vertical-offset="51" max-vertical-offset="1890">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/search.html">
+    <entry file="file://$PROJECT_DIR$/MyPinterest/Picture/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="1580" selection-end="1680" vertical-scroll-proportion="-10.0" vertical-offset="555" max-vertical-offset="1020">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="415">
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#td#1;n#tr#0;n#table#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/createstream.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="14" selection-start="673" selection-end="673" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="465">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/searchresult.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="11" selection-start="613" selection-end="613" vertical-scroll-proportion="-1.8" vertical-offset="180" max-vertical-offset="1215">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/User/templates/userpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="9" selection-start="324" selection-end="399" vertical-scroll-proportion="-2.7" vertical-offset="0" max-vertical-offset="1320">
-          <folding>
-            <element signature="n#style#0;n#input#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/createboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="685" selection-end="785" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="495">
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://db-console:/bdb2151/d2e2868b-9dbf-49fd-b830-573adcdd8fa8/">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="30" selection-start="30" selection-end="30" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="386">
+        <state line="0" column="27" selection-start="1" selection-end="27" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="386">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/views.py">
+    <entry file="file://$PROJECT_DIR$/MyPinterest/Picture/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="67" selection-start="3121" selection-end="3121" vertical-scroll-proportion="-4.230769" vertical-offset="880" max-vertical-offset="3510">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="415">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/boardpage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="4" selection-start="1488" selection-end="1584" vertical-scroll-proportion="-8.875" vertical-offset="597" max-vertical-offset="975">
-          <folding>
-            <element signature="n#style#0;n#input#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/newpin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="1278" selection-end="1539" vertical-scroll-proportion="-4.5" vertical-offset="297" max-vertical-offset="675">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/repinpage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="312" selection-end="312" vertical-scroll-proportion="-3.0" vertical-offset="0" max-vertical-offset="735">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/User/templates/userprofile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="35" selection-start="463" selection-end="480" vertical-scroll-proportion="-4.7916665" vertical-offset="95" max-vertical-offset="1575">
+        <state line="48" column="12" selection-start="1161" selection-end="1469" vertical-scroll-proportion="-11.666667" vertical-offset="440" max-vertical-offset="975">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="0" selection-start="1692" selection-end="1798" vertical-scroll-proportion="-5.125" vertical-offset="717" max-vertical-offset="1095">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyPinterest/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="79" selection-start="1760" selection-end="1780" vertical-scroll-proportion="-6.3846154" vertical-offset="374" max-vertical-offset="750">
+        <state line="20" column="59" selection-start="749" selection-end="760" vertical-scroll-proportion="0.0" vertical-offset="209" max-vertical-offset="780">
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/User/views.py">
+    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="138" selection-start="4977" selection-end="4978" vertical-scroll-proportion="-4.8076925" vertical-offset="1570" max-vertical-offset="2355">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/Relations/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="21" selection-start="3322" selection-end="3322" vertical-scroll-proportion="-7.1153846" vertical-offset="1240" max-vertical-offset="2235">
+        <state line="261" column="29" selection-start="10302" selection-end="10302" vertical-scroll-proportion="-55.0" vertical-offset="3007" max-vertical-offset="4624">
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/pinpage.html">
+    <entry file="file:///Library/Python/2.7/site-packages/django/views/decorators/csrf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="8" selection-start="1398" selection-end="1398" vertical-scroll-proportion="0.3409091" vertical-offset="450" max-vertical-offset="1575">
+        <state line="48" column="4" selection-start="1740" selection-end="1740" vertical-scroll-proportion="0.40298507" vertical-offset="528" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyPinterest/User/templates/userprofile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="70" selection-start="0" selection-end="232" vertical-scroll-proportion="-2.1" vertical-offset="0" max-vertical-offset="1665">
           <folding>
             <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#textarea#0;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#span#0;n#form#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyPinterest/User/templates/homepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="7" selection-start="956" selection-end="1259" vertical-scroll-proportion="-12.0" vertical-offset="252" max-vertical-offset="630">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/recommends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="42" selection-start="558" selection-end="558" vertical-scroll-proportion="-11.25" vertical-offset="45" max-vertical-offset="855">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyPinterest/Relations/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="68" selection-start="4475" selection-end="4532" vertical-scroll-proportion="0.0" vertical-offset="1575" max-vertical-offset="2235">
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyPinterest/User/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="175" column="61" selection-start="6783" selection-end="6783" vertical-scroll-proportion="0.0" vertical-offset="2043" max-vertical-offset="2520">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyPinterest/Pinboard/templates/pinpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="0" selection-start="3248" selection-end="3356" vertical-scroll-proportion="-7.0" vertical-offset="1197" max-vertical-offset="1575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyPinterest/User/templates/changeemail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="4" selection-start="605" selection-end="605" vertical-scroll-proportion="0.5555556" vertical-offset="60" max-vertical-offset="480">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#table#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

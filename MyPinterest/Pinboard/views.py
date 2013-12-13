@@ -245,3 +245,22 @@ def deleteboard(request):
         pin.delete()
     board.delete()
     return HttpResponseRedirect("/")
+
+@csrf_exempt
+def recommend(request):
+    pics = Picture.objects.all()
+    pic_like = []
+    for pic in pics:
+        likes = len(pic.liked_by_users.all())
+        pic_like.append((pic.id,likes))
+    pic_like.sort(key=lambda item: item[1],reverse=True)
+    num = 10 if len(pic_like)>10 else len(pic_like)
+    recommends = []
+    for i in range(0,num):
+        pic = Picture.objects.get(id=pic_like[i][0])
+        pins = Pin.objects.filter(picture=pic)
+        if len(list(pins))>0:
+            recommends.append(list(pins)[0])
+    data = dict()
+    data['recommends']=recommends
+    return render_to_response('recommends.html',data, context_instance=RequestContext(request))

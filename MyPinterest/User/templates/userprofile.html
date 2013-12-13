@@ -85,7 +85,13 @@
     <br>
     {% endif %}
 <h3>Email:</h3>
+
 <span>{{ user.email }}</span>
+{% if isSelf %}
+    <a href="/changeemail">
+    <div class="btn btn-warning">Update</div>
+    </a>
+{% endif %}
 <h3>Create:</h3>
 <span>{{ user.createTime }}</span>
 <h3>Last login:</h3>

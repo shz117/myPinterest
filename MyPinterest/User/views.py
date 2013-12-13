@@ -163,3 +163,14 @@ def getFriends(user):
 def signout(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+@csrf_exempt
+def changeemail(request):
+    if request.method=="GET":
+        return render_to_response('changeemail.html',context_instance=RequestContext(request))
+    else:
+        user = request.user
+        new_email = request.POST['email']
+        user.email=new_email
+        user.save()
+        return HttpResponseRedirect("/user/?uid="+str(user.id))
