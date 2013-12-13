@@ -1,5 +1,4 @@
 from django.db import models
-from MyPinterest import settings
 from MyPinterest.User.models import User
 
 

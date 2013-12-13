@@ -118,9 +118,14 @@ def pinpage(request):
         request.method='GET'
         return pinpage(request)
     elif request.POST.get('tag',None):
-        tag = Tag.objects.create(name=request.POST['tag'])
+        tag_name = request.POST['tag']
+        if len(Tag.objects.filter(name=tag_name))>0:
+            tag = list(Tag.objects.filter(name=tag_name))[0]
+        else:
+            tag = Tag.objects.create(name=tag_name)
         picture = Picture.objects.get(id=request.POST['picture'])
-        picture.tags.add(tag)
+        if tag not in picture.tags.all():
+            picture.tags.add(tag)
         picture.save()
         return HttpResponseRedirect("/pin/?id="+str(request.POST['pin']))
     else:

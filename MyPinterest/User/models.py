@@ -20,28 +20,6 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    #def create_superuser(self, email, name, phone, address, company, role, createTime, password):
-    #    if not email:
-    #        raise ValueError('Users must have an email address')
-    #
-    #    if not password:
-    #        raise ValueError('Users must have a password')
-    #
-    #    user = self.model(
-    #        email=self.normalize_email(email),
-    #        name=name,
-    #        phone=phone,
-    #        address=address,
-    #        company=company,
-    #        role=role,
-    #        createTime=createTime
-    #    )
-    #
-    #    user.is_admin = True
-    #    user.set_password(password)
-    #    user.save(using=self._db)
-    #    return user
-
 
 class User(AbstractBaseUser):
     username = models.CharField(max_length=16,unique=True)
