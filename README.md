@@ -55,3 +55,6 @@ Use:
 6. python manage.py runserver
 7. access by http://localhost:8000/
 8. Have fun! :-)
+
+A few thoughts:
+1. data models live in different Django Apps, if we deploy them to different server instance, any pass data object around when joining, is that kind of sharding?
